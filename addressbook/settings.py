@@ -84,17 +84,36 @@ WSGI_APPLICATION = 'addressbook.wsgi.application'
 #     }
 # }
 
+# local setting
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         # 'NAME': BASE_DIR / 'db.sqlite3',
+#         'NAME': 'addressbookdb',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'localhost',
+#         'PORT': 5432,
+#     }
+# }
+
+# RDS
+# Instance Name: 'addressbookdatabase'
+# USER: postgres
+# Password: postgres4321
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME': 'addressbookdb',
+        'NAME': 'testdatabase',
         'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
+        'PASSWORD': 'postgres4321',
+        'HOST': 'addressbookdatabase.c6mwxjrmroks.ap-southeast-2.rds.amazonaws.com',
         'PORT': 5432,
     }
 }
+
 
 
 # Password validation
@@ -134,6 +153,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/opt/bitnami/apps/django/django_projects/Project/static/'
 
 # start code - messages - https://simpleisbetterthancomplex.com/tips/2016/09/06/django-tip-14-messages-framework.html
 from django.contrib.messages import constants as messages

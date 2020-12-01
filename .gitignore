@@ -7,3 +7,4 @@ venv
 **.idea
 *.sqlite3
 *pyc
+error_log
