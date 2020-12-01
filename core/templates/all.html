@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Asif's Address Book{% endblock %}
+
+{% block content %}
+
+{% include '_messages.html' %}
+<br>
+
+<a href="{% url 'core:new' %}" class="btn btn-success">New</a><br><br>
+
+<h1>All Addresses</h1>
+
+<ul>
+{% for person in persons %}
+    <li>{{ person.name }}, {{ person.email }}, {{ person.street_address }}, {{ person.state }}, {{ person.postcode }}<form method="POST">{% csrf_token %}<a href="{% url 'core:delete' person.id %}" class="badge badge-danger" type="submit">Delete</a></form><br>
+    </li>
+
+{% endfor %}
+</ul>
+{% endblock %}
