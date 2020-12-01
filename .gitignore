@@ -1,0 +1,9 @@
+addressbook/settings/local.py
+venv
+.sqlite3
+.env
+.vscode
+.DS_Store
+**.idea
+*.sqlite3
+*pyc
