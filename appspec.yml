@@ -101,6 +101,7 @@ hooks:
 #   in the script specified in "location".
   AfterInstall:
     - location: scripts/applicationstart.sh
+    - location: scripts/collectstatic.sh
       # timeout: 600
 #      runas:
 #    - location:
